@@ -8,7 +8,7 @@ dotenv.config();
 neonConfig.webSocketConstructor = ws;
 const connectionString = `${process.env.DB_NEON}`;
 
-const pool = new Pool({ connectionString });
+//const pool = new Pool({ connectionString });
 const prisma = new PrismaClient({
   datasources: {
     db: {
@@ -77,7 +77,7 @@ export const deleteUser = async (req: Request, res: Response) => {
     const deletedUser = await userClient.delete({
       where: { email: email },
     });
-    console.log(deletedUser)
+    console.log(deletedUser);
     res.status(200).json({ data: deletedUser });
   } catch (e) {
     console.log(`Error: ${e}`);
