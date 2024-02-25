@@ -2,4 +2,4 @@
 
 ## High Level Diagram
 
-![image](./imgs/userAuthHighLevel.png)
+![image](./server/imgs/userAuthHighLevel.png)
