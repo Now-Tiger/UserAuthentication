@@ -1,12 +1,14 @@
 import Header from "@/screen/home/Header";
+import UserLogin from "@/screen/user/UserLogin";
 import React from "react";
 
-const Home = () => {
+const LoginPage = () => {
   return (
     <>
       <Header />
+      <UserLogin />
     </>
   );
 };
 
-export default Home;
+export default LoginPage;
