@@ -41,8 +41,6 @@ const UserAdd = () => {
     } else {
       alert("Password and connfirm password does not match please try again!!");
     }
-
-    // You may want to handle the response data or redirect the user after successful registration
   };
 
   return (
