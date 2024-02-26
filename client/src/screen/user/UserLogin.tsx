@@ -1,7 +1,9 @@
 "use client";
+// import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const UserLogin = () => {
+  // const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,6 +23,7 @@ const UserLogin = () => {
       alert(responseData.Error);
     } else {
       alert(responseData.data);
+      // router.push("/user/add");
     }
   };
   return (

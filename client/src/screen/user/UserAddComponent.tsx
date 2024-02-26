@@ -12,12 +12,12 @@ const UserAdd = () => {
   });
 
   useEffect(() => {
-    console.log(formData);
+    // console.log(formData);
   }, [formData]);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     if (formData.password == formData.confirmPassword) {
       try {
         const apiUrl = "http://localhost:5173/api/auth/register";
