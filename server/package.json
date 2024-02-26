@@ -26,8 +26,10 @@
     "@prisma/adapter-neon": "^5.10.2",
     "@prisma/client": "^5.10.2",
     "@types/cors": "^2.8.17",
+    "@types/jsonwebtoken": "^9.0.5",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
     "ws": "^8.16.0"
   }
 }

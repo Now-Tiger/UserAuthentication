@@ -18,6 +18,36 @@ const prisma = new PrismaClient({
 
 const userClient = prisma.user;
 
+/** regester user */
+export const registerUser = async (req: Request, res: Response) => {
+  try {
+    const { name, email, password, confirmPassword } = req.body;
+    const isEmailExists = await userClient.findUnique({
+      where: { email: email },
+    });
+    if (isEmailExists) {
+      res.status(404).json({ Error: "Email already in use" });
+      return;
+    } else if (password === confirmPassword) {
+      const registerdUser = await userClient.create({
+        data: {
+          name: name,
+          email: email,
+          password: password,
+          role: "user",
+        },
+      });
+      res.status(201).json({ data: registerdUser });
+    } else {
+      console.log(`Password doesn't match`);
+      res.status(400).json({ Error: "Incorrect password" });
+    }
+  } catch (e) {
+    console.log(`Error: ${e}`);
+    res.status(400).json({ Error: "Server Error" });
+  }
+};
+
 /** Login user bassed on password */
 export const authUser = async (req: Request, res: Response) => {
   try {
