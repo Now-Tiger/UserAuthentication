@@ -69,3 +69,13 @@ export const authUser = async (req: Request, res: Response) => {
     res.status(400).json({ Error: "Server Error" });
   }
 };
+
+/** Logout User */
+export const logoutUser = async (req: Request, res: Response) => {
+  try {
+    //
+  } catch (e) {
+    console.log(`Error: ${e}`);
+    res.status(400).json({ Error: "Server Error" });
+  }
+};
