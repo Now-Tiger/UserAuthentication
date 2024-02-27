@@ -15,10 +15,11 @@ const UserAdd = () => {
     // console.log(formData);
   }, [formData]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     // console.log(formData);
-    if (formData.password === formData.confirmPassword) { // Changed '==' to '===' for strict equality comparison
+    if (formData.password === formData.confirmPassword) {
+      // Changed '==' to '===' for strict equality comparison
       try {
         const apiUrl = "http://localhost:5173/api/auth/register";
         const response = await fetch(apiUrl, {
